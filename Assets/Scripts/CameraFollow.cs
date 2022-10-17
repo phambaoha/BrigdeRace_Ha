@@ -12,8 +12,7 @@ public class CameraFollow : MonoBehaviour
     Vector3 offset;
     private void Awake()
     {
-        player = FindObjectOfType<PlayerMove>().transform;
-       
+        player = FindObjectOfType<PlayerMove>().transform; 
     }
 
 

@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3888118005460746224}
   - component: {fileID: 1541796305974062246}
   - component: {fileID: 6560389299774491251}
-  - component: {fileID: 8752281471785619302}
+  - component: {fileID: -2969422006578986550}
+  - component: {fileID: -5624869689795861512}
   m_Layer: 0
   m_Name: RedBrick
-  m_TagString: PlayerBrick
+  m_TagString: brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8752281471785619302
+--- !u!114 &-2969422006578986550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606453605448316572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9ed4cc12eb83a4c8af937153cf2ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickColor: 0
+--- !u!65 &-5624869689795861512
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

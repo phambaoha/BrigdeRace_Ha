@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 8769270054516121164}
   - component: {fileID: 6422807673627544858}
   - component: {fileID: 1678933715805006799}
-  - component: {fileID: 3833042388619439834}
+  - component: {fileID: -6418531597279235959}
+  - component: {fileID: 2481169279434782993}
   m_Layer: 0
   m_Name: BlueBrick
-  m_TagString: Untagged
+  m_TagString: brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3833042388619439834
+--- !u!114 &-6418531597279235959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488753663808018208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9ed4cc12eb83a4c8af937153cf2ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickColor: 2
+--- !u!65 &2481169279434782993
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 2084873876597690313}
   - component: {fileID: 4358961712746372255}
   - component: {fileID: 8219214765680261706}
-  - component: {fileID: 5795555098668220255}
+  - component: {fileID: -2555821985824837172}
+  - component: {fileID: -4259385406542356711}
   m_Layer: 0
   m_Name: YellowBrick
-  m_TagString: Untagged
+  m_TagString: brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5795555098668220255
+--- !u!114 &-2555821985824837172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562408164354754213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9ed4cc12eb83a4c8af937153cf2ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickColor: 3
+--- !u!65 &-4259385406542356711
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
