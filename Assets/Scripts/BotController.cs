@@ -21,6 +21,9 @@ public class BotController : CharacterController
 
     private void Start()
     {
+            ChangeState(new SeekBrickState());
+
+
             Rand = UnityEngine.Random.Range(0, 3);
             for (int j = 0; j < 100; j++)
             {
@@ -31,7 +34,7 @@ public class BotController : CharacterController
                 else break;
 
             }  
-            RandomCharacterColor( (ColorType)Rand);
+            RandomCharacterColor(botRenderer, (ColorType)Rand);
             temp.Add(Rand);
     }
 
@@ -55,19 +58,14 @@ public class BotController : CharacterController
     protected override void CharacterMoving()
     {
 
-        for (int i = 0; i < brickGenerator.spawnedBricks.Length; i++)
-        {
-
-
-            navMeshAgent.destination = brickGenerator.spawnedBricks[i].position;
-        }
+       
 
     }
 
-    public override void RandomCharacterColor( ColorType colorType)
+    public override void RandomCharacterColor(Transform botRenderer, ColorType colorType)
     {
-        base.RandomCharacterColor(colorType);
-        botRenderer.GetComponent<MeshRenderer>().material = characterMat[(int)colorType];
+        base.RandomCharacterColor(botRenderer, colorType);
+      
 
 
     }

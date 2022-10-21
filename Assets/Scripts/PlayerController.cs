@@ -10,6 +10,11 @@ public class PlayerController : CharacterController
     private void Awake()
     {
         joystickMove = GetComponent<JoystickMove>();
+        
+  
+    }
+    private void Start()
+    {
         Rand = Random.Range(0, 3);
         for (int j = 0; j < 100; j++)
         {
@@ -20,13 +25,8 @@ public class PlayerController : CharacterController
             else
                 break;
         }
-         RandomCharacterColor((ColorType)Rand);
+        RandomCharacterColor(playerRenderer, (ColorType)Rand) ;
         temp.Add(Rand);
-  
-    }
-    private void Start()
-    {
-       
     }
 
     protected override void CharacterMoving()
@@ -64,10 +64,10 @@ public class PlayerController : CharacterController
         }
     }
 
-    public override void RandomCharacterColor(ColorType colorType)
+    public override void RandomCharacterColor(Transform playerRender ,ColorType colorType)
     {
-        base.RandomCharacterColor(colorType);
-        playerRenderer.GetComponent<MeshRenderer>().material = characterMat[(int)colorType];
+        base.RandomCharacterColor(playerRender,colorType);
+   
     }
 }
 

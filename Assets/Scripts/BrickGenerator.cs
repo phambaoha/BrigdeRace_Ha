@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BrickGenerator : MonoBehaviour
 {
 
@@ -11,8 +12,9 @@ public class BrickGenerator : MonoBehaviour
         public ColorType brickColorName;
         public Vector3 position;
         public bool removed;
-    }
 
+
+    }
     public SpawnedBricks[] spawnedBricks;
 
     private Vector3 startPoint;
@@ -32,8 +34,10 @@ public class BrickGenerator : MonoBehaviour
      
     public void Start()
     {
-        InvokeRepeating(nameof(GenerateRemovedBrick), 0, 3f);
+        
         OnInit();
+
+        InvokeRepeating(nameof(GenerateRemovedBrick), 1f, 1f);
     }
 
     void OnInit()
@@ -45,6 +49,8 @@ public class BrickGenerator : MonoBehaviour
         spawnedBricks = new SpawnedBricks[length];
 
         CreateBricks();
+
+       
     }
 
 
@@ -67,39 +73,47 @@ public class BrickGenerator : MonoBehaviour
             Transform createdBrick = Instantiate(brickPrefabs[Random.Range(0, brickPrefabs.Length)], position, Quaternion.identity).transform;
 
             createdBrick.transform.SetParent(this.transform);
+
             createdBrick.GetComponent<Brick>().numberBrick = i;
 
 
-            InsertIntoArray(createdBrick, createdBrick.GetComponent<Brick>().brickColor, i);
+            InsertIntoArray(createdBrick, createdBrick.GetComponent<Brick>().brickColor,i);
 
         }
     }
 
     public void MakeRemoved(int brickNumber)
     {
+       
         spawnedBricks[brickNumber].removed = true;
     }
-    private void InsertIntoArray(Transform createdBrick, ColorType colorName,int i)
+    private void InsertIntoArray(Transform createdBrick, ColorType colorName, int i)
     {
         var tmp = new SpawnedBricks();
-        tmp.brickColorName = colorName;
+        tmp.brickColorName  = colorName;
         tmp.position = createdBrick.position;
         tmp.removed = false;
         spawnedBricks[i] = tmp;
     }
-
+ 
     public void GenerateRemovedBrick()
     {
      
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < spawnedBricks.Length; i++)
         {
             if (spawnedBricks[i].removed == true)
             {
                 int temp = (int)spawnedBricks[i].brickColorName;
                 Transform createdBrick = Instantiate(brickPrefabs[temp], spawnedBricks[i].position, Quaternion.identity).transform;
-                createdBrick.transform.SetParent(this.transform);
+
+                // add lai brick vao day
+              //  InsertIntoList(createdBrick, createdBrick.GetComponent<Brick>().brickColor);
+
+                //   spawnedBricks[i] = createdBrick;
                 spawnedBricks[i].removed = false;
-                return;
+                
+                createdBrick.transform.SetParent(this.transform);
+             
             }
         }
     }

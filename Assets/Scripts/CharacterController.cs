@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour
 {
     public Transform posAddBricks;
 
-    protected List<Transform> listBrickCharater = new List<Transform>();
+    public List<Transform> listBrickCharater = new List<Transform>();
 
    // public Transform CharacterRenderer;
 
@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviour
 
 
     public BrickGenerator brickGenerator;
+
+   
 
     public LayerMask layerStair;
 
@@ -80,10 +82,10 @@ public class CharacterController : MonoBehaviour
     // random mau nhan vat
 
 
-    public virtual void RandomCharacterColor( ColorType colorType)
+    public virtual void RandomCharacterColor( Transform CharacterRenderer, ColorType colorType)
     {
         characterColor = colorType;
-       // CharacterRenderer.GetComponent<MeshRenderer>().material = characterMat[(int)colorType];
+        CharacterRenderer.GetComponent<MeshRenderer>().material = characterMat[(int)colorType];
        
     }
 
@@ -97,6 +99,8 @@ public class CharacterController : MonoBehaviour
         other.transform.SetParent(posAddBricks.transform);
 
         listBrickCharater.Add(other.transform);
+
+        
 
         other.transform.localPosition = new Vector3(0, 0.25f * QuantityBrick, 0);
         other.transform.localRotation = Quaternion.identity;
@@ -122,8 +126,13 @@ public class CharacterController : MonoBehaviour
         if (other.gameObject.CompareTag("brick") && characterColor == other.GetComponent<Brick>().brickColor)
         {
             AddBrick(other);
+
+           //brickGenerator.spawnedBricks.Remove(other.GetComponent<Brick>()); 
+
             if (brickGenerator != null)
                 brickGenerator.MakeRemoved(other.GetComponent<Brick>().numberBrick);
+
+          //  brickGenerator.RemoveIntoList(other.GetComponent<Brick>().numberBrick);
 
         }
 
