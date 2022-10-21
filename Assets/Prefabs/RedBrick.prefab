@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brickColor: 0
+  numberBrick: 0
 --- !u!65 &-5624869689795861512
 BoxCollider:
   m_ObjectHideFlags: 0

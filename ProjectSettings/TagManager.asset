@@ -6,16 +6,18 @@ TagManager:
   tags:
   - brick
   - Ladder
-  - slope
+  - newstage
+  - finishgame
+  - bot
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - stair
   - Water
   - UI
-  - 
-  - 
+  - ground
+  - brick
   - 
   - 
   - 
